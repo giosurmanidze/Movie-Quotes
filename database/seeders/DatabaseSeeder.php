@@ -1,15 +1,7 @@
 <?php
 
+
 namespace Database\Seeders;
-
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-
-//?
-
-// 444444444444444444444444444
-
-//?
-
 
 use App\Models\Movie;
 use App\Models\Quote;
@@ -30,9 +22,7 @@ class DatabaseSeeder extends Seeder
 
         $movie = Movie::factory()->create();
 
-        Quote::factory(10)->create([
-            'movie_id' => $movie->id
-        ]);
+        Quote::factory(10)->create();
 
 
         User::create([

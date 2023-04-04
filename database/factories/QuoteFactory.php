@@ -26,7 +26,7 @@ class QuoteFactory extends Factory
         return [
             'movie_id' => Movie::factory(),
             'movie_img' =>  $imageUrl,
-            'quote' => $faker->sentence()
+            'quote' => fake()->sentence()
 
         ];
     }

@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Quote extends Model
 {
-   
+    use HasFactory;
+
     protected $fillable = ['movie_id', 'quote', 'id'];
 
     public function movie()
