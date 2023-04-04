@@ -18,6 +18,8 @@ class SessionsController extends Controller
     {
         $validated = $request->validated();
 
+        dd(auth()->attempt($validated));
+
         if (!auth()->attempt($validated)) {
             throw ValidationException::withMessages([
                 'email' => 'Your provided credentials could not be verified.'
