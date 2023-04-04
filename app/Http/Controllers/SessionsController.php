@@ -3,11 +3,24 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreLoginRequest;
+use App\Providers\RouteServiceProvider;
 use Illuminate\Validation\ValidationException;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 
 class SessionsController extends Controller
 {
+    use AuthenticatesUsers;
+
+    protected $redirectTo = RouteServiceProvider::HOME;
+
+
+    public function __construct()
+    {
+        $this->middleware('guest')->except('logout');
+    }
+
+
     public function create()
     {
         return view('login.create');
@@ -25,6 +38,6 @@ class SessionsController extends Controller
         }
         session()->regenerate();
 
-        return redirect("/")->with(['success' => 'Welcome Back!']);
+        return redirect('/admin/dashboard');
     }
 }
