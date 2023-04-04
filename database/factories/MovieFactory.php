@@ -16,9 +16,8 @@ class MovieFactory extends Factory
      */
     public function definition(): array
     {
-        $faker = \Faker\Factory::create();
         return [
-            'title' => $faker->word()
+            'title' => fake()->word(),
         ];
     }
 }

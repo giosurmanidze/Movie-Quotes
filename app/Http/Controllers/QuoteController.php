@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Movie;
 use App\Models\Quote;
 use Illuminate\Http\Request;
 
@@ -10,21 +9,18 @@ class QuoteController extends Controller
 {
     public function index()
     {
-        $quotes = Quote::with('movie')->inRandomOrder()->get();
+        $quote = Quote::with('movie')->get()->random();
 
         return view('quotes.index', [
-            'quotes' => $quotes
+            'quote' => $quote
         ]);
     }
 
     public function show($id)
     {
-        $movie = Movie::findOrFail($id);
-        $quotes = Quote::where('movie_id', $id)->inRandomOrder()->get();
 
-        return view('quotes.show', [
-            'movie' => $movie,
-            'quotes' => $quotes,
-        ]);
+        $quotes = Quote::with('movie')->where('movie_id', $id)->inRandomOrder()->get();
+
+        return view('quotes.show', ['quotes' => $quotes]);
     }
 }
