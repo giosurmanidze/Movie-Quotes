@@ -8,6 +8,12 @@ use Illuminate\Http\Request;
 
 class SessionsController extends Controller
 {
+    public function create()
+    {
+        return view('login.create');
+    }
+
+
     public function store(StoreLoginRequest $request)
     {
         $validated = $request->validated();
