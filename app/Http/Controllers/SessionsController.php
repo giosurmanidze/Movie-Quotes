@@ -40,4 +40,11 @@ class SessionsController extends Controller
 
         return redirect('/admin/dashboard');
     }
+
+    public function distroy()
+    {
+        auth()->logout();
+
+        return redirect('/');
+    }
 }
