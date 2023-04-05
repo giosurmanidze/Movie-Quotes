@@ -37,7 +37,7 @@
                                 class="text-blue-500 hover:text-blue-600">Edit</a>
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                            <form method="POST">
+                            <form method="POST" action="/admin/quotes/{{$quote->id}}">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="text-red-500 hover:text-red-600">Delete</button>
