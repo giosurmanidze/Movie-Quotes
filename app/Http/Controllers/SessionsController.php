@@ -14,13 +14,6 @@ class SessionsController extends Controller
 
     protected $redirectTo = RouteServiceProvider::HOME;
 
-
-    public function __construct()
-    {
-        $this->middleware('guest')->except('logout');
-    }
-
-
     public function create()
     {
         return view('login.create');
@@ -41,10 +34,9 @@ class SessionsController extends Controller
         return redirect('/admin/dashboard');
     }
 
-    public function distroy()
+    public function logout()
     {
         auth()->logout();
-
-        return redirect('/');
+        return redirect('/admin/login');
     }
 }

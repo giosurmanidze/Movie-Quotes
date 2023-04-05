@@ -11,7 +11,6 @@ class QuoteController extends Controller
     {
         $quote = Quote::with('movie')->get()->random();
 
-        auth()->logout();
         return view('quotes.index', [
             'quote' => $quote
         ]);

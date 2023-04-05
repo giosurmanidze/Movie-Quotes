@@ -9,8 +9,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [QuoteController::class, 'index'])->name('quotes.index');
 Route::get('movies/{id}/quotes', [QuoteController::class, 'show'])->name('quotes.show');
 
-Route::get('admin/login', [SessionsController::class, 'create'])->middleware('guest')->name('login');
+Route::post('logout', [SessionsController::class, 'logout'])->middleware('auth')->name('logout');
+Route::get('admin/login', [SessionsController::class, 'create'])->middleware('guest');
 Route::post('admin/login', [SessionsController::class, 'store'])->middleware('guest');
-Route::post('logout', [SessionsController::class, 'distroy'])->middleware('auth');
 
-Route::get('admin/dashboard', [DashboardController::class, 'create'])->middleware(['auth', 'admin']);
+Route::get('admin/dashboard', [DashboardController::class, 'login'])->middleware('admin');
