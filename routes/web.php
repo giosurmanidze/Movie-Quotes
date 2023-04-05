@@ -25,4 +25,6 @@ Route::middleware(['admin'])->group(function () {
     Route::get('admin/dashboard/update-quote', [AdminQuoteController::class, 'index']);
     Route::get('admin/update-quotes/{quote}/edit', [AdminQuoteController::class, 'edit']);
     Route::patch('admin/quotes/{quote}', [AdminQuoteController::class, 'update']);
+    Route::delete('admin/quotes/{quote}', [AdminQuoteController::class, 'distroy']);
+    
 });
