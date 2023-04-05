@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\Movie;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Quote>
@@ -21,7 +22,6 @@ class QuoteFactory extends Factory
 
         $randomNumber = $faker->numberBetween(1, 1000);
         $imageUrl = "https://picsum.photos/800/600?random=" . $randomNumber;
-
 
         return [
             'movie_id' => Movie::factory(),
