@@ -24,14 +24,14 @@
                 @enderror
             </div>
             <div class="mb-6">
-                <label class="block mb-2 uppercase font-bold text-xs text-white" for="movie_img">
+                <label class="block mb-2 uppercase font-bold text-xs text-white" for="image">
                     image
                 </label>
 
-                <input class="border border-gray-400 p-2 w-full" type="file" name="movie_img" id="movie_img"
+                <input class="border border-gray-400 p-2 w-full" type="file" name="image" id="image"
                     required>
 
-                @error('movie_img')
+                @error('image')
                     <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
                 @enderror
             </div>

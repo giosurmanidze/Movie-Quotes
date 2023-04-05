@@ -17,7 +17,7 @@ class CreateQuoteRequest extends FormRequest
         return [
             'movie_id' => 'required|integer|exists:movies,id',
             'quote' => 'required|string',
-            'movie_img' => 'required|image|mimes:jpeg,png,jpg,gif,svg'
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg'
         ];
     }
 }
