@@ -11,11 +11,7 @@ class QuoteController extends Controller
 {
     public function index()
     {
-        $count = Quote::count();
-        if ($count == 0) {
-            return;
-        }
-        $quote = Quote::with('movie')->get()->random();
+        $quote = Quote::with('movie')->get()?->random();
 
         return view('quotes.index', [
             'quote' => $quote
@@ -30,11 +26,11 @@ class QuoteController extends Controller
     }
 
 
-    public function createQuote(CreateQuoteRequest $request)
+    public function store(CreateQuoteRequest $request)
     {
         $validatedData = $request->validated();
 
-        $path = $request->file('movie_img')->store('quotes');
+        $path = $request->file('image')->store('quotes');
 
         $quote = new Quote();
         $quote->movie_id = $validatedData['movie_id'];
