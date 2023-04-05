@@ -23,8 +23,10 @@
             <div class="text-cente pb-1">ka</div>
         </div>
     </div>
+    
 
     {{ $content }}
+    
 
 </body>
 
