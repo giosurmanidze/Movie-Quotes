@@ -24,7 +24,6 @@ class DatabaseSeeder extends Seeder
 
         Quote::factory(10)->create();
 
-
         User::create([
             'name' => 'girogi',
             'email' => 'giorgi777@example.com',
