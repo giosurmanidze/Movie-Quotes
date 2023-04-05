@@ -31,7 +31,7 @@ class SessionsController extends Controller
         }
         session()->regenerate();
 
-        return redirect('/admin/dashboard');
+        return redirect('admin/dashboard/create-quote');
     }
 
     public function logout()
