@@ -13,5 +13,5 @@ Route::post('logout', [SessionsController::class, 'logout'])->middleware('auth')
 Route::get('admin/login', [SessionsController::class, 'create'])->middleware('guest');
 Route::post('admin/login', [SessionsController::class, 'store'])->middleware('guest');
 
-Route::get('admin/dashboard', [DashboardController::class, 'login'])->middleware('admin');
+Route::get('admin/dashboard/create-quote', [DashboardController::class, 'login'])->middleware('admin');
 Route::post('admin/quotes', [QuoteController::class, 'store'])->middleware('admin');
