@@ -20,12 +20,11 @@
                         <td class="px-6 py-4 whitespace-wrap max-w-sm">
                             <div class="flex items-center">
                                 <div class="flex-shrink-0 h-20 w-20">
-                                    <img class="h-20 w-20 object-cover rounded" src="{{ $quote->movie_img }}"
-                                        alt="{{ $quote->movie_img }}">
+                                    <x-image-check class="h-20 w-20 object-cover rounded" :quote="$quote"/>
                                 </div>
                                 <div class="ml-4">
                                     <div class="text-sm font-medium text-gray-900">
-                                        <a href="/movies/{{$quote->id}}/quote"
+                                        <a href="/movies/{{ $quote->id }}/quote"
                                             class="hover:underline">{{ $quote->quote }}</a>
                                     </div>
                                     <div class="text-sm text-gray-500">{{ $quote->movie?->title }}</div>
@@ -37,7 +36,7 @@
                                 class="text-blue-500 hover:text-blue-600">Edit</a>
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                            <form method="POST" action="/admin/quotes/{{$quote->id}}">
+                            <form method="POST" action="/admin/quotes/{{ $quote->id }}">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="text-red-500 hover:text-red-600">Delete</button>
