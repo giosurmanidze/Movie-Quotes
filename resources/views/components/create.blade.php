@@ -25,11 +25,11 @@
                 <input class="border border-gray-400 p-2 w-full rounded-md" type="file" name="image" id="image"
                     required>
 
-                @error('image')
                     <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
                 @enderror
             </div>
             <div class="mb-6">
+                @error('image')
                 <label class="block mb-2 uppercase font-bold text-xs text-white" for="movie_id">
                     movies
                 </label>
