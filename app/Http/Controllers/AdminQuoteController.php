@@ -11,7 +11,7 @@ class AdminQuoteController extends Controller
     public function index()
     {
         return view('components.update-quote', [
-            'quotes' => Quote::paginate(30)
+            'quotes' => Quote::all()
         ]);
     }
 
