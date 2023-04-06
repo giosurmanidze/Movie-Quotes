@@ -30,10 +30,10 @@ class AdminMovieController extends Controller
         return redirect('/');
     }
 
-    public function distroy(Movie $movie)
+    public function destroy(Movie $movie)
     {
         $movie->delete();
-        
+
         return back();
     }
 }
