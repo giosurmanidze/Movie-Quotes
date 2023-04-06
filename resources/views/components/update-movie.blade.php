@@ -5,7 +5,7 @@
             <thead class="bg-gray-50">
                 <tr>
                     <th scope="col"
-                        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Quote</th>
+                        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Movie</th>
                     <th scope="col" class="relative px-6 py-3">
                         <span class="sr-only">Edit</span>
                     </th>
@@ -15,29 +15,24 @@
                 </tr>
             </thead>
             <tbody class="bg-white divide-y divide-gray-200">
-                @foreach ($quotes as $quote)
+                @foreach ($movies as $movie)
                     <tr>
                         <td class="px-6 py-4 whitespace-wrap max-w-sm">
-                            <div class="flex items-center">
-                                <div class="flex-shrink-0 h-20 w-20">
-                                    <img class="h-20 w-20 object-cover rounded" src="{{ $quote->movie_img }}"
-                                        alt="{{ $quote->movie_img }}">
-                                </div>
-                                <div class="ml-4">
+                            <div class="ml-4">
+                                <div class="text-sm font-medium text-gray-900">
                                     <div class="text-sm font-medium text-gray-900">
-                                        <a href="/movies/{{$quote->id}}/quote"
-                                            class="hover:underline">{{ $quote->quote }}</a>
+                                        {{ $movie->title }}
                                     </div>
-                                    <div class="text-sm text-gray-500">{{ $quote->movie?->title }}</div>
                                 </div>
+                            </div>
                             </div>
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                            <a href="/admin/update-quotes/{{ $quote->id }}/edit"
+                            <a href="/admin/update-movies/{{ $movie->id }}/edit"
                                 class="text-blue-500 hover:text-blue-600">Edit</a>
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                            <form method="POST" action="/admin/quotes/{{$quote->id}}">
+                            <form method="POST" action="/admin/movies/{{ $movie->id }}">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="text-red-500 hover:text-red-600">Delete</button>
