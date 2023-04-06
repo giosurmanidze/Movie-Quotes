@@ -28,11 +28,15 @@ Route::middleware(['admin'])->prefix('admin')->group(function () {
     Route::post('quotes', [QuoteController::class, 'store']);
     Route::post('movies', [MovieController::class, 'store']);
 
-    Route::get('update-quotes/{quote}/edit', [AdminQuoteController::class, 'edit']);
-    Route::patch('quotes/{quote}', [AdminQuoteController::class, 'update']);
-    Route::delete('quotes/{quote}', [AdminQuoteController::class, 'destroy']);
-
-    Route::get('update-movies/{movie}/edit', [AdminMovieController::class, 'edit']);
-    Route::patch('movies/{movie}', [AdminMovieController::class, 'update']);
-    Route::delete('movies/{movie}', [AdminMovieController::class, 'destroy']);
+    
+    Route::controller(AdminQuoteController::class)->group(function () {
+        Route::get('update-quotes/{quote}/edit', 'edit');
+        Route::patch('quotes/{quote}', 'update');
+        Route::delete('quotes/{quote}', 'destroy');
+    });
+    Route::controller(AdminMovieController::class)->group(function () {
+        Route::get('update-movies/{movie}/edit', 'edit');
+        Route::patch('movies/{movie}', 'update');
+        Route::delete('movies/{movie}', 'destroy');
+    });
 });
