@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminMovieController;
 use App\Http\Controllers\AdminQuoteController;
 use App\Http\Controllers\MovieController;
 use App\Http\Controllers\SessionsController;
@@ -26,5 +27,10 @@ Route::middleware(['admin'])->group(function () {
     Route::get('admin/update-quotes/{quote}/edit', [AdminQuoteController::class, 'edit']);
     Route::patch('admin/quotes/{quote}', [AdminQuoteController::class, 'update']);
     Route::delete('admin/quotes/{quote}', [AdminQuoteController::class, 'distroy']);
+
+    Route::get('admin/dashboard/update-movie', [AdminMovieController::class, 'index']);
+    Route::get('admin/update-movies/{movie}/edit', [AdminMovieController::class, 'edit']);
+    Route::patch('admin/movies/{movie}', [AdminMovieController::class, 'update']);
+    Route::delete('admin/movies/{movie}', [AdminMovieController::class, 'distroy']);
     
 });

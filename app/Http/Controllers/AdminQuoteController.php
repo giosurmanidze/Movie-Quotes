@@ -17,7 +17,7 @@ class AdminQuoteController extends Controller
 
     public function edit(Quote $quote)
     {
-        return view('components.edit', ['quote' => $quote]);
+        return view('components.edit-quote', ['quote' => $quote]);
     }
 
 
