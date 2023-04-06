@@ -1,9 +1,9 @@
 <div class="flex text-white items-center w-full mt-3 justify-around">
     <div class="flex gap-3">
-        <a href="#"
-            class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium {{ request()->is('admin/dashboard/') ? 'bg-gray-900 text-white' : '' }}">Edit
+        <a href="/admin/dashboard/update-quote"
+            class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium {{ request()->is('admin/dashboard/update-quote') ? 'bg-gray-900 text-white' : '' }}">Edit
             Quote</a>
-        <a href="#"
+        <a href=""
             class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium {{ request()->is('edit-movie') ? 'bg-gray-900 text-white' : '' }}">Edit
             Movie</a>
         <a href="/admin/dashboard/create-quote"
