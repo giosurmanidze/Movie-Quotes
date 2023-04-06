@@ -25,6 +25,13 @@ class QuoteController extends Controller
         return view('quotes.show', ['quotes' => $quotes]);
     }
 
+    public function single(Quote $quote)
+    {
+        return view('quotes.single', [
+            'quote' => $quote
+        ]);
+    }
+
 
     public function store(CreateQuoteRequest $request)
     {
