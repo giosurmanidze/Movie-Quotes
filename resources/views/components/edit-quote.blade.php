@@ -18,21 +18,21 @@
                     <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
                 @enderror
             </div>
-            <div class="mb-6">
+            <div class="mb-6 h-[250px]">
                 <label class="block mb-2 uppercase font-bold text-xs text-white" for="image">
                     image
                 </label>
 
-                <div class="flex justify-between">
+                <div class="flex flex-col">
                     <input class="border border-gray-400 p-2 w-full rounded-md" type="file" name="image" id="image"
                         required value="{{ old('image', $quote->movie_img) }}">
-                    <img src="{{ $quote->movie_img }}" class="rounded-xl" width="80"/>
+                    <x-image-check class="rounded-xl h-[150px] w-full mt-3"  :quote="$quote"/>
                 </div>
                 @error('image')
                     <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
                 @enderror
             </div>
-            <div class="mb-6">
+            <div class="mb-8">
                 <label class="block mb-2 uppercase font-bold text-xs text-white" for="movie_id">
                     movies
                 </label>
