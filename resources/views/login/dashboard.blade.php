@@ -24,7 +24,6 @@
 
                 <input class="border border-gray-400 p-2 w-full rounded-md" type="file" name="image" id="image"
                     required>
-
                 @error('image')
                     <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
                 @enderror
