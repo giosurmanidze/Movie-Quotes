@@ -24,6 +24,7 @@ class QuoteController extends Controller
 
         return view('quotes.show', ['quotes' => $quotes]);
     }
+    
 
     public function single(Quote $quote)
     {
@@ -37,12 +38,15 @@ class QuoteController extends Controller
     {
         $validatedData = $request->validated();
 
-        $path = $request->file('image')->store('quotes');
+
+        $path = $request->file('image')->store('quotes_images');
 
         $quote = new Quote();
         $quote->movie_id = $validatedData['movie_id'];
         $quote->quote = $validatedData['quote'];
         $quote->movie_img = $path;
+        
+        
         $quote->save();
 
         return back();
