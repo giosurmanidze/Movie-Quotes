@@ -17,7 +17,7 @@ class AdminQuoteController extends Controller
 
     public function edit(Quote $quote)
     {
-        return view('components.edit', ['quote' => $quote]);
+        return view('components.edit-quote', ['quote' => $quote]);
     }
 
 
@@ -34,7 +34,7 @@ class AdminQuoteController extends Controller
         return redirect('/');
     }
 
-    public function distroy(Quote $quote)
+    public function destroy(Quote $quote)
     {
 
         $quote->delete();

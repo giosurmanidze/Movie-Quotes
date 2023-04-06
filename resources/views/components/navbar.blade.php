@@ -3,8 +3,8 @@
         <a href="/admin/dashboard/update-quote"
             class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium {{ request()->is('admin/dashboard/update-quote') ? 'bg-gray-900 text-white' : '' }}">Edit
             Quote</a>
-        <a href=""
-            class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium {{ request()->is('edit-movie') ? 'bg-gray-900 text-white' : '' }}">Edit
+        <a href="/admin/dashboard/update-movie"
+            class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium {{ request()->is('admin/dashboard/update-movie') ? 'bg-gray-900 text-white' : '' }}">Edit
             Movie</a>
         <a href="/admin/dashboard/create-quote"
             class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium {{ request()->is('admin/dashboard/create-quote') ? 'bg-gray-900 text-white' : '' }}">Create
