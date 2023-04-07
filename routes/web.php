@@ -32,12 +32,12 @@ Route::middleware(['admin'])->prefix('admin')->name('admin.')->group(function ()
 
     Route::controller(AdminQuoteController::class)->name('update-quotes.')->group(function () {
         Route::get('update-quotes/{id}/edit', 'edit')->name('edit');
-        Route::patch('quotes/{quote}', 'update')->name('update');
-        Route::delete('quotes/{quote}', 'destroy')->name('destroy');
+        Route::patch('quotes/{id}', 'update')->name('update');
+        Route::delete('quotes/{id}', 'destroy')->name('destroy');
     });
     Route::controller(AdminMovieController::class)->name('update-movies.')->group(function () {
         Route::get('update-movies/{id}/edit', 'edit')->name('edit');
-        Route::patch('movies/{movie}', 'update')->name('update');
-        Route::delete('movies/{movie}', 'destroy')->name('destroy');
+        Route::patch('movies/{id}', 'update')->name('update');
+        Route::delete('movies/{id}', 'destroy')->name('destroy');
     });
 });

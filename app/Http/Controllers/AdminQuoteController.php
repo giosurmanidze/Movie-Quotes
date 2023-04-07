@@ -15,13 +15,13 @@ class AdminQuoteController extends Controller
         ]);
     }
 
-    public function edit(Quote $quote)
+    public function edit(Quote $id)
     {
-        return view('components.edit-quote', ['quote' => $quote]);
+        return view('components.edit-quote', ['quote' => $id]);
     }
 
 
-    public function update(CreateQuoteRequest $request, Quote $quote)
+    public function update(CreateQuoteRequest $request, Quote $id)
     {
         $validatedData = $request->validated();
 
@@ -29,15 +29,15 @@ class AdminQuoteController extends Controller
             $validatedData['image'] = $request->file('image')->store('quotes_images');
         }
 
-        $quote->update($validatedData);
+        $id->update($validatedData);
 
         return redirect('/');
     }
 
-    public function destroy(Quote $quote)
+    public function destroy(Quote $id)
     {
 
-        $quote->delete();
+        $id->delete();
 
         return back();
     }
