@@ -1,15 +1,16 @@
 <x-navbar />
 <x-layout>
+    
     <x-slot name="content">
         <form method="POST" action="/admin/quotes/{{$quote->id}}" enctype="multipart/form-data" class="mt-8">
             @csrf
             @method('PATCH')
 
-            <h1 class="text-white mt-5">Edit post: {{ $quote->quote }}</h1>
+            <h1 class="text-white mt-5">{{__("Edit_quote")}} : {{ $quote->quote }}</h1>
 
             <div class="mb-6 mt-8">
                 <label class="block mb-2 uppercase font-bold text-xs text-white" for="title">
-                    quote
+                    {{__("Quote")}}
                 </label>
 
                 <textarea class="border border-gray-400 p-2 w-full outline-none rounded-md" name="quote" id="quote" required>{{ old('quote', $quote->quote) }}</textarea>
@@ -20,7 +21,8 @@
             </div>
             <div class="mb-6 h-[250px]">
                 <label class="block mb-2 uppercase font-bold text-xs text-white" for="image">
-                    image
+                    {{__("Image")}}
+
                 </label>
 
                 <div class="flex flex-col">
@@ -34,7 +36,7 @@
             </div>
             <div class="mb-8">
                 <label class="block mb-2 uppercase font-bold text-xs text-white" for="movie_id">
-                    movies
+                    {{__("Movies")}}
                 </label>
 
                 <select name="movie_id" id="movie_id" class="w-full h-9 outline-none rounded-md pl-1">
@@ -51,9 +53,10 @@
             </div>
             <div class="mb-6">
                 <button type="submit" class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500">
-                    Update
+                    {{__("Update")}}
                 </button>
             </div>
         </form>
+        <x-lang-control :id="$quote->id" path_name='admin.update-quotes.edit' />
     </x-slot>
 </x-layout>
