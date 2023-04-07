@@ -15,24 +15,24 @@ class AdminMovieController extends Controller
         ]);
     }
 
-    public function edit(Movie $movie)
+    public function edit(Movie $id)
     {
-        return view('components.edit-movie', ['movie' => $movie]);
+        return view('components.edit-movie', ['movie' => $id]);
     }
 
-    public function update(CreateMovieRequest $request, Movie $movie)
+    public function update(CreateMovieRequest $request, Movie $id)
     {
 
         $validatedData = $request->validated();
 
-        $movie->update($validatedData);
+        $id->update($validatedData);
 
         return redirect('/');
     }
 
-    public function destroy(Movie $movie)
+    public function destroy(Movie $id)
     {
-        $movie->delete();
+        $id->delete();
 
         return back();
     }
