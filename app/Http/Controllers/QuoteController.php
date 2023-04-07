@@ -46,7 +46,6 @@ class QuoteController extends Controller
         $quote->quote = $validatedData['quote'];
         $quote->movie_img = $path;
         
-        
         $quote->save();
 
         return back();
