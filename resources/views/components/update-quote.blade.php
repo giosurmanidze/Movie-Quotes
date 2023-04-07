@@ -5,12 +5,12 @@
             <thead class="bg-gray-50">
                 <tr>
                     <th scope="col"
-                        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Quote</th>
+                        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">{{__("Quotes")}}</th>
                     <th scope="col" class="relative px-6 py-3">
-                        <span class="sr-only">Edit</span>
+                        <span class="sr-only">{{ __('Edit') }}</span>
                     </th>
                     <th scope="col" class="relative px-6 py-3">
-                        <span class="sr-only">Delete</span>
+                        <span class="sr-only">{{ __('Delete') }}</span>
                     </th>
                 </tr>
             </thead>
@@ -33,19 +33,18 @@
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                             <a href="/admin/update-quotes/{{ $quote->id }}/edit"
-                                class="text-blue-500 hover:text-blue-600">Edit</a>
+                                class="text-blue-500 hover:text-blue-600">{{ __('Edit') }}</a>
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                             <form method="POST" action="/admin/quotes/{{ $quote->id }}">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="text-red-500 hover:text-red-600">Delete</button>
+                                <button type="submit" class="text-red-500 hover:text-red-600">{{ __('Delete') }}</button>
                             </form>
                         </td>
                     </tr>
                 @endforeach
             </tbody>
         </table>
-
     </x-slot>
 </x-layout>

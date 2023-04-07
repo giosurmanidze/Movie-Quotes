@@ -7,7 +7,7 @@
 
             <div class="mb-6 w-full">
                 <label class="block mb-2 uppercase font-bold text-xs text-white" for="title">
-                    title
+                    {{__("Title")}}
                 </label>
 
                 <input class="border border-gray-400 p-2 w-[300px] outline-none rounded-md" type="text" name="title"
@@ -20,9 +20,10 @@
             </div>
             <div class="mb-6">
                 <button type="submit" class="bg-blue-400 text-white rounded py-2 px-4 hover:bg-blue-500">
-                    Update
+                    {{__("Update")}}
                 </button>
             </div>
         </form>
+        <x-lang-control :id="$movie->id" path_name='admin.update-movies.edit' />
     </x-slot>
 </x-layout>

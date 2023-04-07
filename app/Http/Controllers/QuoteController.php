@@ -20,6 +20,7 @@ class QuoteController extends Controller
 
     public function show($id)
     {
+       
         $quotes = Quote::with('movie')->where('movie_id', $id)->inRandomOrder()->get();
 
         return view('quotes.show', ['quotes' => $quotes]);
