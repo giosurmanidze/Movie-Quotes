@@ -20,7 +20,6 @@ class QuoteController extends Controller
 
     public function show($id)
     {
-       
         $quotes = Quote::with('movie')->where('movie_id', $id)->inRandomOrder()->get();
 
         return view('quotes.show', ['quotes' => $quotes]);
@@ -46,7 +45,6 @@ class QuoteController extends Controller
         $quote->movie_id = $validatedData['movie_id'];
         $quote->quote = $validatedData['quote'];
         $quote->movie_img = $path;
-        
         
         $quote->save();
 

@@ -8,7 +8,7 @@
             <x-image-check class="w-full h-[350px] rounded-xl" :quote="$quote" />
             <h3 class="font-Alkatra text-xl mt-3">" {{ $quote->quote }} "</h3>
             <a class="mt-2 underline text-xl font-Noto"
-                href="{{ route('quotes.show', $quote->id) }}">{{ $quote->movie?->title }}</a>
+                href="{{ route('quotes.show', $quote->movie->id) }}">{{ $quote->movie?->title }}</a>
         </div>
         <x-lang-control  path_name='quotes.index' />
     </x-slot>
