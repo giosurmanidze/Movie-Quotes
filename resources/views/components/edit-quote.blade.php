@@ -28,7 +28,14 @@
                 <div class="flex flex-col">
                     <input class="border border-gray-400 p-2 w-full rounded-md" type="file" name="image" id="image"
                         required value="{{ old('image', $quote->movie_img) }}">
-                    <x-image-check class="rounded-xl h-[150px] w-full mt-3"  :quote="$quote"/>
+                    @if ($quote->movie_img)
+                      <x-image-check class="rounded-xl h-[150px] w-full mt-3"  :quote="$quote"/>
+                @else
+                    <div class="max-w-2xl w-full bg-gray-300 flex items-center justify-center rounded mt-3">
+                        <h3 class="text-black absolute text-md text-md">{{ __('index_img_status') }}</h3>
+                        <img class="rounded-xl h-[150px] w-full mt-3" />
+                    </div>
+                @endif
                 </div>
                 @error('image')
                     <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
