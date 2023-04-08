@@ -5,7 +5,8 @@
             <thead class="bg-gray-50">
                 <tr>
                     <th scope="col"
-                        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">{{__("Quotes")}}</th>
+                        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        {{ __('Quotes') }}</th>
                     <th scope="col" class="relative px-6 py-3">
                         <span class="sr-only">{{ __('Edit') }}</span>
                     </th>
@@ -20,7 +21,14 @@
                         <td class="px-6 py-4 whitespace-wrap max-w-sm">
                             <div class="flex items-center">
                                 <div class="flex-shrink-0 h-20 w-20">
-                                    <x-image-check class="h-20 w-20 object-cover rounded" :quote="$quote"/>
+                                    @if ($quote->movie_img)
+                                        <x-image-check class="h-20 w-20 object-cover rounded" :quote="$quote" />
+                                    @else
+                                        <div class="flex items-center justify-center">
+                                            <h3 class="text-xs absolute w-[50px]">{{__("image_status")}}</h3>
+                                            <img class="h-20 w-20 object-cover rounded bg-white" />
+                                        </div>
+                                    @endif
                                 </div>
                                 <div class="ml-4">
                                     <div class="text-sm font-medium text-gray-900">
@@ -39,7 +47,8 @@
                             <form method="POST" action="/admin/quotes/{{ $quote->id }}">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="text-red-500 hover:text-red-600">{{ __('Delete') }}</button>
+                                <button type="submit"
+                                    class="text-red-500 hover:text-red-600">{{ __('Delete') }}</button>
                             </form>
                         </td>
                     </tr>

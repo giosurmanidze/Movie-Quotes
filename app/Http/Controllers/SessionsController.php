@@ -25,14 +25,15 @@ class SessionsController extends Controller
         $validated = $request->validated();
 
         if (!auth()->attempt($validated)) {
-            throw ValidationException::withMessages([
-                'email' => 'Your provided credentials could not be verified.'
+            return back()->withErrors([
+                'email' => trans('validation.email'),
             ]);
         }
         session()->regenerate();
 
         return redirect('admin/dashboard/create-quote');
     }
+    
 
     public function logout()
     {

@@ -10,7 +10,7 @@
                 </label>
 
                 <input class="border border-gray-400 p-2 w-[300px] outline-none rounded-md" type="text" name="title"
-                    id="title" value="{{ old('title') }}" required>
+                    id="title" value="{{ old('title') }}">
                 </input>
 
                 @error('title')

@@ -13,7 +13,14 @@
                     <h1 class="p-15 text-xl">{{ $quotes[0]->movie->title }}</h1>
                     @foreach ($quotes as $quote)
                         <div class="mt-10 bg-white rounded-lg border border-black">
-                            <img class="w-full h-[300px] rounded-tl-lg rounded-tr-lg" src="{{ $quote->movie_img }}" />
+                            @if ($quote->movie_img)
+                                <x-image-check class="h-[350px] w-full object-cover rounded" :quote="$quote" />
+                            @else
+                                <div class="max-w-2xl w-[400px] h-[350px] bg-gray-300 flex items-center justify-center rounded">
+                                    <h3 class="text-black absolute text-md text-xl">{{ __('index_img_status') }}</h3>
+                                    <img class="h-[350px] h-[350px] w-full object-cover rounded" />
+                                </div>
+                            @endif
                             <h3 class="font-Alkatra text-xl text-black py-3 pl-2">" {{ $quote->quote }} "</h3>
                         </div>
                     @endforeach
