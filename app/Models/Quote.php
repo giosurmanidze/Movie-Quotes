@@ -9,10 +9,21 @@ class Quote extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['slug', 'quote', 'id'];
+    protected $guarded = [];
+
+    public $translatable = ['quote_ka', 'quote_en'];
+
 
     public function movie()
     {
         return $this->belongsTo(Movie::class);
+    }
+
+    public function getTranslation($field, $locale = null)
+    {
+        $locale = $locale ?: app()->getLocale();
+        $attribute = "{$field}_{$locale}";
+
+        return $this->{$attribute};
     }
 }

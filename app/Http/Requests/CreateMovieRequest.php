@@ -14,7 +14,8 @@ class CreateMovieRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => 'required|unique:movies,title'
+            'title_ka' => 'required|unique:movies,title_ka',
+            'title_en' => 'required|unique:movies,title_en'
         ];
     }
 }

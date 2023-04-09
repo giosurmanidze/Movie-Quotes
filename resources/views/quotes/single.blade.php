@@ -12,7 +12,8 @@
                         <img class="h-[350px] h-[350px] w-full object-cover rounded" />
                     </div>
                 @endif
-                <h3 class="font-Alkatra text-xl text-black py-3 pl-2">" {{ $quote->quote }} "</h3>
+                <h3 class="font-Alkatra text-xl text-black py-3 pl-2">"
+                    {{ $quote->getTranslation('quote', app()->getLocale()) }} "</h3>
             </div>
         </div>
 

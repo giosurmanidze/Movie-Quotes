@@ -16,7 +16,8 @@ class CreateQuoteRequest extends FormRequest
     {
         return [
             'movie_id' => 'required|integer|exists:movies,id',
-            'quote' => 'required|string',
+            'quote_ka' => 'required|string',
+            'quote_en' => 'required|string',
         ];
     }
 }
