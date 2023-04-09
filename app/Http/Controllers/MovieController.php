@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 
 class MovieController extends Controller
 {
-
     public function store(CreateMovieRequest $request)
     {
         $data = $request->validated();
