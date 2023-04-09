@@ -28,10 +28,10 @@ class QuoteController extends Controller
     }
 
 
-    public function single(Quote $quote)
+    public function single(Quote $id)
     {
         return view('quotes.single', [
-            'quote' => $quote
+            'quote' => $id
         ]);
     }
 

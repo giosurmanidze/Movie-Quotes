@@ -20,8 +20,8 @@ class MovieFactory extends Factory
 
         $faker_GE = Faker::create('ka_GE');
         return [
-            'title_ka' => $faker_GE ->realText(10),
-            'title_en' => fake()->word(),
+            'title_ka' => $faker_GE ->realText(15),
+            'title_en' => fake()->sentence(3),
         ];
     }
 }
