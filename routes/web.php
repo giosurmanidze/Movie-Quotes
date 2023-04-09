@@ -5,7 +5,6 @@ use App\Http\Controllers\AdminQuoteController;
 use App\Http\Controllers\MovieController;
 use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\QuoteController;
-use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 
 

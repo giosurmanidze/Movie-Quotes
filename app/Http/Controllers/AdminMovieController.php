@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateMovieRequest;
 use App\Models\Movie;
+use App\Models\Quote;
 use Illuminate\Http\Request;
 
 class AdminMovieController extends Controller
@@ -32,6 +33,7 @@ class AdminMovieController extends Controller
 
     public function destroy(Movie $id)
     {
+        $id->quotes()->delete();
         $id->delete();
 
         return back();

@@ -9,13 +9,24 @@
             <h1 class="text-white mt-5">{{__("Edit_quote")}} : {{ $quote->quote }}</h1>
 
             <div class="mb-6 mt-8">
-                <label class="block mb-2 uppercase font-bold text-xs text-white" for="title">
-                    {{__("Quote")}}
+                <label class="block mb-2 uppercase font-bold text-xs text-white" for="quote_en">
+                    {{__("quote_en")}}
                 </label>
 
-                <textarea class="border border-gray-400 p-2 w-full outline-none rounded-md" name="quote" id="quote" required>{{ old('quote', $quote->quote) }}</textarea>
+                <textarea class="border border-gray-400 p-2 w-full outline-none rounded-md" name="quote_en" id="quote_en" required>{{ old('quote_en', $quote->quote_en) }}</textarea>
 
-                @error('quote')
+                @error('quote_en')
+                    <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
+                @enderror
+            </div>
+            <div class="mb-6 mt-8">
+                <label class="block mb-2 uppercase font-bold text-xs text-white" for="quote_ka">
+                    {{__("quote_ka")}}
+                </label>
+
+                <textarea class="border border-gray-400 p-2 w-full outline-none rounded-md" name="quote_ka" id="quote_ka" required>{{ old('quote_ka', $quote->quote_ka) }}</textarea>
+
+                @error('quote_ka')
                     <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
                 @enderror
             </div>
@@ -27,7 +38,7 @@
 
                 <div class="flex flex-col">
                     <input class="border border-gray-400 p-2 w-full rounded-md" type="file" name="image" id="image"
-                        required value="{{ old('image', $quote->movie_img) }}">
+                         value="{{ old('image', $quote->movie_img) }}">
                     @if ($quote->movie_img)
                       <x-image-check class="rounded-xl h-[150px] w-full mt-3"  :quote="$quote"/>
                 @else
@@ -46,11 +57,11 @@
                     {{__("Movies")}}
                 </label>
 
-                <select name="movie_id" id="movie_id" class="w-full h-9 outline-none rounded-md pl-1">
+                <select name="movie_id" id="movie_id" class="w-full h-9 outline-none rounded-md pl-1" required>
                     @foreach (\App\Models\Movie::all() as $movie)
-                        <option value="{{ $movie->id }}"
+                        <option  value="{{ $movie->id }}" 
                             {{ old('movie_id', $quote->movie_id) == $movie->id ? 'selected' : '' }}>
-                            {{ ucwords($movie->title) }}</option>
+                            {{ ($movie->getTranslation('title', app()->getLocale())) }}</option>
                     @endforeach
                 </select>
 

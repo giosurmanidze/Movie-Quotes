@@ -25,7 +25,7 @@
                                         <x-image-check class="h-20 w-20 object-cover rounded" :quote="$quote" />
                                     @else
                                         <div class="flex items-center justify-center">
-                                            <h3 class="text-xs absolute w-[50px]">{{__("image_status")}}</h3>
+                                            <h3 class="text-xs absolute w-[50px]">{{ __('image_status') }}</h3>
                                             <img class="h-20 w-20 object-cover rounded bg-white" />
                                         </div>
                                     @endif
@@ -33,9 +33,11 @@
                                 <div class="ml-4">
                                     <div class="text-sm font-medium text-gray-900">
                                         <a href="/movies/{{ $quote->id }}/quote"
-                                            class="hover:underline">{{ $quote->quote }}</a>
+                                            class="hover:underline">{{ $quote->getTranslation('quote', app()->getLocale()) }}</a>
                                     </div>
-                                    <div class="text-sm text-gray-500">{{ $quote->movie?->title }}</div>
+                                    <div class="text-sm text-gray-500">
+                                        {{ $quote->movie?->getTranslation('title', app()->getLocale()) }}
+                                    </div>
                                 </div>
                             </div>
                         </td>
