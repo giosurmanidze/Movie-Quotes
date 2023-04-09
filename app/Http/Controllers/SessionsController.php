@@ -33,7 +33,7 @@ class SessionsController extends Controller
 
         return redirect('admin/dashboard/create-quote');
     }
-    
+
 
     public function logout()
     {
