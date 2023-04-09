@@ -2,13 +2,13 @@
 <x-layout>
     <x-slot name="content">
 
-        <form method="POST" action="/admin/quotes" enctype="multipart/form-data" class="mt-8">
+        <form method="POST" action="/admin/quotes" enctype="multipart/form-data" class="mt-8 w-[400px]">
             @csrf
 
             <x-textarea text="quote_ka" for="quote_ka" />
             <x-textarea text="quote_en" for="quote_en" />
 
-            <div class="mb-6">
+            <div class="mb-6 w-[400px]">
                 <label class="block mb-2 uppercase font-bold text-xs text-white" for="image">
                     {{ __('Image') }}
 
@@ -22,7 +22,7 @@
 
                 </label>
 
-                <select name="movie_id" id="movie_id" class="w-full h-9 outline-none rounded-md pl-1">
+                <select name="movie_id" id="movie_id" class="w-[400px] h-9 outline-none rounded-md pl-1">
                     @foreach (\App\Models\Movie::all() as $movie)
                         <option value="{{ $movie->id }}" {{ old('movie_id') == $movie->id ? 'selected' : '' }}>
                             {{ ($movie->getTranslation('title', app()->getLocale())) }}</option>

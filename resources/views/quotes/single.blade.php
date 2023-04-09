@@ -1,7 +1,7 @@
 <x-layout>
     <x-slot name="content">
-        <button class="m-5 inline-block px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-600"
-            onclick="goBack()">{{ __('back') }}</button>
+        <a href="/admin/dashboard/update-quote"
+            class="m-5 inline-block px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-600">{{ __('back') }}</a>
         <div class="mt-10 flex flex-col">
             <div class="mt-10 bg-white rounded-lg border border-black">
                 @if ($quote->movie_img)
@@ -16,11 +16,6 @@
                     {{ $quote->getTranslation('quote', app()->getLocale()) }} "</h3>
             </div>
         </div>
-
-        <script>
-            function goBack() {
-                window.history.back();
-            }
-        </script>
+        <x-lang-control :id="$quote->id" path_name='quotes.single' />
     </x-slot>
 </x-layout>
