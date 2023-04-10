@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Faker\Factory as Faker;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Movie>
@@ -16,8 +17,11 @@ class MovieFactory extends Factory
      */
     public function definition(): array
     {
+
+        $faker_GE = Faker::create('ka_GE');
         return [
-            'title' => fake()->word(),
+            'title_ka' => $faker_GE ->realText(15),
+            'title_en' => fake()->sentence(3),
         ];
     }
 }

@@ -6,7 +6,6 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class CreateQuoteRequest extends FormRequest
 {
-
     /**
      * Get the validation rules that apply to the request.
      *
@@ -16,8 +15,8 @@ class CreateQuoteRequest extends FormRequest
     {
         return [
             'movie_id' => 'required|integer|exists:movies,id',
-            'quote' => 'required|string',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg'
+            'quote_ka' => 'required|string',
+            'quote_en' => 'required|string',
         ];
     }
 }

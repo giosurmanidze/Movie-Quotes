@@ -8,11 +8,13 @@ use Illuminate\Http\Request;
 
 class MovieController extends Controller
 {
-
     public function store(CreateMovieRequest $request)
     {
+        $data = $request->validated();
+
         $movie = Movie::create([
-            'title' => $request->validated()['title']
+            'title_ka' => $data['title_ka'],
+            'title_en' => $data['title_en'],
         ]);
 
         return back();

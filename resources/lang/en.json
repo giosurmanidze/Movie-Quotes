@@ -1,0 +1,16 @@
+{
+    "Edit_quote": "Edit Quote",
+    "back": "Go Back",
+    "login": "Sign in to your account",
+    "signIn": "Sign In",
+    "Email": "Email Address",
+
+    "title_en": "Title in english",
+    "quote_en": "Quote in english",
+
+    "title_ka": "Title in georgian",
+    "quote_ka": "Quote in georgian",
+
+    "image_status": "No Image",
+    "index_img_status": "No image found for this quote."
+}

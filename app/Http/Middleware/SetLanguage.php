@@ -19,7 +19,7 @@ class SetLanguage
 
         $language = $request->session()->get('language', 'en');
 
-        
+
         if ($request->has('language')) {
             $language = $request->language;
             $request->session()->put('language', $language);

@@ -1,11 +1,11 @@
 <?php
+
 namespace Database\Seeders;
 
 use App\Models\Movie;
 use App\Models\Quote;
 use App\Models\User;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -20,12 +20,12 @@ class DatabaseSeeder extends Seeder
 
         $movie = Movie::factory()->create();
 
-        Quote::factory(10)->create();
+        Quote::factory(5)->create();
 
         User::create([
             'name' => 'girogi',
             'email' => 'giorgi777@example.com',
-            'password' => Hash::make('blablablaaaa'),
+            'password' => bcrypt('blablablaaaa'),
         ]);
     }
 }
