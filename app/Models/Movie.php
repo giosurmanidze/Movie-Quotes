@@ -10,7 +10,7 @@ class Movie extends Model
     use HasFactory;
 
 
-    protected $fillable = ['title_ka', 'title_en', 'id'];
+    protected $fillable = ['title_ka', 'title_en',];
 
     public $translatable = ['title_ka', 'title_en'];
 
