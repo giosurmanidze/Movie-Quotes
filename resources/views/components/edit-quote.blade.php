@@ -72,6 +72,23 @@
                 </button>
             </div>
         </form>
-        <x-lang-control :id="$quote->id" path_name='admin.update-quotes.edit' />
+        <x-lang-control :id="$quote->id" path_name='admin.update-quotes.edit' name="quote" />
+
+        {{-- <div class="fixed left-0 top-1/2 transform -translate-y-1/2 p-8 flex flex-col justify-center gap-3">
+            <div
+                class="flex items-center justify-center w-9 h-9 rounded-[50%] border border-white {{ request()->language == 'en' ? 'bg-white text-black' : 'border-white text-white' }}">
+                <a href="{{ route('admin.update-quotes.edit', ['quote' => $quote->id, 'language' => 'en']) }}"
+                    class="text-center pb-1">en</a>
+
+            </div>
+            <div
+                class="flex items-center justify-center w-9 h-9 rounded-[50%] border border-white {{ request()->language == 'ka' ? 'bg-white text-black' : 'border-white text-white' }}">
+                <a href="{{ route('admin.update-quotes.edit', ['quote' => $quote->id, 'language' => 'ka']) }}"
+                    class="text-center pb-1">ka</a>
+
+
+            </div>
+        </div> --}}
+
     </x-slot>
 </x-layout>

@@ -31,6 +31,6 @@
                 <p>No quotes found for this movie.</p>
             @endif
         </div>
-        <x-lang-control :id="$quotes[0]?->movie_id" path_name='quotes.show' />
+        <x-lang-control id="{{ $quotes[0]->movie_id }}" path_name="quotes.show" name="id" />
     </x-slot>
 </x-layout>

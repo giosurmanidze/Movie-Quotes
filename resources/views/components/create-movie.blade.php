@@ -12,6 +12,6 @@
             </div>
         </form>
         <div class="fixed left-0 top-1/2 transform -translate-y-1/2 p-8 flex flex-col justify-center gap-3">
-            <x-lang-control path_name='admin.dashboard.movies.create' />
+            <x-lang-control path_name='admin.dashboard.movies.create' name="movie"/>
     </x-slot>
 </x-layout>

@@ -16,6 +16,6 @@
                 </button>
             </div>
         </form>
-        <x-lang-control :id="$movie->id" path_name='admin.update-movies.edit' />
+        <x-lang-control :id="$movie->id" path_name='admin.update-movies.edit' name="movie"/>
     </x-slot>
 </x-layout>

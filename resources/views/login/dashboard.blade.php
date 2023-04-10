@@ -35,6 +35,6 @@
                 </button>
             </div>
         </form>
-        <x-lang-control path_name='admin.dashboard.quotes.create' />
+        <x-lang-control path_name='admin.dashboard.quotes.create' name="quote"/>
     </x-slot>
 </x-layout>

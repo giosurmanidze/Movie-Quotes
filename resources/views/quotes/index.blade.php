@@ -19,7 +19,7 @@
                     {{ $quote->movie->getTranslation('title', app()->getLocale()) }}
                 </a>
             </div>
-            <x-lang-control path_name='quotes.index' />
+            <x-lang-control path_name='quotes.index' name="quote"/>
         @else
             <div class="text-center mt-10">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"

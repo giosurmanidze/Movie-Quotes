@@ -9,7 +9,8 @@ class Quote extends Model
 {
     use HasFactory;
 
-    protected $guarded = [];
+    protected $fillable = ['quote_ka', 'quote_en', 'movie_id', 'movie_img'];
+
 
     public $translatable = ['quote_ka', 'quote_en'];
 

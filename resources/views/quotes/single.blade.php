@@ -16,6 +16,6 @@
                     {{ $quote->getTranslation('quote', app()->getLocale()) }} "</h3>
             </div>
         </div>
-        <x-lang-control :id="$quote->id" path_name='quotes.single' />
+        <x-lang-control :id="$quote->id" path_name='quotes.single' name="quote" />
     </x-slot>
 </x-layout>
