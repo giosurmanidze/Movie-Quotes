@@ -13,7 +13,7 @@ module.exports = {
           },
           fontFamily: {
               Alkatra: "'Alkatra', cursive",
-              Noto: "Noto Sans', sans-serif",
+              Noto: "'Noto Sans', sans-serif",
           },
       },
   },
