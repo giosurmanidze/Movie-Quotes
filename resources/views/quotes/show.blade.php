@@ -10,11 +10,20 @@
 
             @if ($quotes->count() > 0)
                 <div class="mt-10 flex flex-col">
-                    <h1 class="p-15 text-xl">{{ $quotes[0]->movie->title }}</h1>
+                    <h1 class="p-15 text-xl">{{ $quotes[0]->movie->getTranslation('title', app()->getLocale()) }}</h1>
                     @foreach ($quotes as $quote)
                         <div class="mt-10 bg-white rounded-lg border border-black">
-                            <img class="w-full h-[300px] rounded-tl-lg rounded-tr-lg" src="{{ $quote->movie_img }}" />
-                            <h3 class="font-Alkatra text-xl text-black py-3 pl-2">" {{ $quote->quote }} "</h3>
+                            @if ($quote->movie_img)
+                                <x-image-check class="h-[350px] w-full object-cover rounded" :quote="$quote" />
+                            @else
+                                <div
+                                    class="max-w-2xl w-[400px] h-[350px] bg-gray-300 flex items-center justify-center rounded">
+                                    <h3 class="text-black absolute text-md text-xl">{{ __('index_img_status') }}</h3>
+                                    <img class="h-[350px] h-[350px] w-full object-cover rounded" />
+                                </div>
+                            @endif
+                            <h3 class="font-Alkatra text-xl text-black py-3 pl-2">
+                                "{{ $quote->getTranslation('quote', app()->getLocale()) }} "</h3>
                         </div>
                     @endforeach
                 </div>
@@ -22,6 +31,6 @@
                 <p>No quotes found for this movie.</p>
             @endif
         </div>
-        <x-lang-control :id="$quotes[0]->movie_id" path_name='quotes.show' />
+        <x-lang-control id="{{ $quotes[0]->movie_id }}" path_name="quotes.show" name="id" />
     </x-slot>
 </x-layout>

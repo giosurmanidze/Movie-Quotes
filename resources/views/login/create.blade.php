@@ -2,29 +2,34 @@
     <x-slot name="content">
         <div class="flex min-h-full items-center justify-center px-4 py-12 sm:px-6 lg:px-8">
             <div class="w-full max-w-md space-y-8">
-                <div>
-                    <img class="mx-auto h-12 w-auto" src="/images/movie-svgrepo-com.svg" alt="Your Company">
-                    <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">Sign in to your account
+                <div class="flex items-center ga flex-col">
+                    <svg style="color: rgb(229, 88, 0);" xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-camera-reels-fill" viewBox="0 0 16 16"> <path d="M6 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" fill="color: rgb(229, 88, 0);"></path> <path d="M9 6a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" fill="color: rgb(229, 88, 0);"></path> <path d="M9 6h.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 7.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 16H2a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h7z" fill="color: rgb(229, 88, 0);"></path> </svg>
+                    <h2 class="mt-6 text-center text-2xl font-bold tracking-tight text-gray-300">{{ __('login') }}
                     </h2>
 
                 </div>
-                <form class="mt-8 space-y-6" action="/admin/login" method="POST">
+                <form class="mt-8 space-y-6 min-w-[350px]" action="/admin/login" method="POST">
                     @csrf
                     <div class="-space-y-px rounded-md shadow-sm flex flex-col gap-3">
+
                         <div>
                             <label for="email" class="sr-only">Email address</label>
-                            <input id="email" name="email" type="email" required
+                            <input id="email" name="email" type="email"
                                 class="relative block w-full rounded-t-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 pl-3 h-11 outline-none"
-                                placeholder="Email address">
+                                placeholder="{{ __('Email') }}" value="{{ old('email') }}">
+
                             @error('email')
-                                <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
-                            @enderror
+                               <p class="text-red-500 text-xs mt-1">
+                                    {{ $message }}
+                                </p>
+                            @enderror 
+                         
                         </div>
                         <div>
                             <label for="password" class="sr-only">Password</label>
                             <input id="password" name="password" type="password" required
                                 class="relative block w-full rounded-b-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:z-10 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 pl-3 h-11 outline-none"
-                                placeholder="Password">
+                                placeholder={{ __('Password') }}>
 
                         </div>
                     </div>
@@ -39,11 +44,12 @@
                                         clip-rule="evenodd" />
                                 </svg>
                             </span>
-                            Sign in
+                            {{ __('signIn') }}
                         </button>
                     </div>
                 </form>
             </div>
         </div>
+        <x-lang-control path_name='sessions.create' />
     </x-slot>
 </x-layout>

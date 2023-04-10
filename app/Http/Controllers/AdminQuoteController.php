@@ -25,6 +25,7 @@ class AdminQuoteController extends Controller
     {
         $validatedData = $request->validated();
 
+
         if (isset($validatedData['image'])) {
             $validatedData['image'] = $request->file('image')->store('quotes_images');
         }

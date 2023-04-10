@@ -21,7 +21,7 @@
                             <div class="ml-4">
                                 <div class="text-sm font-medium text-gray-900">
                                     <div class="text-sm font-medium text-gray-900">
-                                        {{ $movie->title }}
+                                        {{ ($movie->getTranslation('title', app()->getLocale())) }}
                                     </div>
                                 </div>
                             </div>
