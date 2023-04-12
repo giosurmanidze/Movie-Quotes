@@ -63,6 +63,8 @@ if you've completed getting started section, then migrating database if fairly s
 
 ---
 ## DrawSql <a name="draw-sql"></a>
+<a href="https://drawsql.app/teams/redberry-35/diagrams/movie-qoutes-db">DrawSql:</a>
+<br></br>
 <img src="https://i.postimg.cc/mgLhPv4G/draw-SQL-movie-qoutes-db-export-2023-04-10.png" />
 
 ---
@@ -71,43 +73,6 @@ You can run Laravel's built-in development server by executing:
 
 `  php artisan serve `
 
-when working on JS you may run:
+for using tailwind css you may run:
 
 `  npm run dev `
-
----
-
-## Project Structure<a name="project-structure"></a>
-
-<pre>
-
-├─── app
-│   ├─── Console
-│   ├─── Exceptions
-│   ├─── Http
-│   ├─── Models
-│   ├─── Providers
-│   │   ├─── App
-│   │   ├─── DataStructures
-│   │   ├─── Auth
-│   │   ├─── Broadcast
-│   │   ├─── Event
-│   │   │___ Route
-├─── bootstrap
-├─── config
-├─── database
-├─── lang
-├─── public
-├─── packages
-├─── resources
-├─── routes
-├─── scripts
-├─── storage
-├─── tests
-- .env
-- artisan
-- composer.json
-- package.json
-- phpunit.xml
-
-</pre>
