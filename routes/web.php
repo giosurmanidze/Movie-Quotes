@@ -13,7 +13,7 @@ Route::get('movies/{quote}/quote', [QuoteController::class, 'single'])->name('qu
 
 Route::post('logout', [SessionsController::class, 'logout'])->middleware('auth')->name('logout');
 Route::get('admin/login', [SessionsController::class, 'create'])->middleware('guest')->name('sessions.create');
-Route::post('admin/login', [SessionsController::class, 'store'])->middleware('guest')->name('sessions.store');
+Route::post('admin/login', [SessionsController::class, 'login'])->middleware('guest')->name('sessions.store');
 
 
 Route::middleware(['admin'])->prefix('admin')->name('admin.')->group(function () {
