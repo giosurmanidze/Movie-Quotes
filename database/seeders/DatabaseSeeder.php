@@ -15,8 +15,6 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         Quote::truncate();
-        User::truncate();
-
 
         $movie = Movie::factory()->create();
 
