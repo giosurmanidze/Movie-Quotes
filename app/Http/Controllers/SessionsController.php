@@ -20,7 +20,7 @@ class SessionsController extends Controller
     }
 
 
-    public function store(StoreLoginRequest $request)
+    public function login(StoreLoginRequest $request)
     {
         $validated = $request->validated();
 
