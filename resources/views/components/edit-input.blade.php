@@ -6,7 +6,7 @@
     </label>
 
     <input class="border border-gray-400 p-2 w-[350px] outline-none rounded-md" type="text" name="{{ $text }}"
-        id="{{ $text }}" value="{{ old($text, $movie->$text) }}" required>
+        id="{{ $text }}" value="{{ old($text, $movie->$text) }}">
     </input>
 
     @error($text)
