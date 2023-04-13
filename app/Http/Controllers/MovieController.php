@@ -19,4 +19,10 @@ class MovieController extends Controller
 
         return back();
     }
+
+
+    public function show(Movie $movie)
+    {
+        return view('quotes.show', ['movie' => $movie->load('quotes')]);
+    }
 }
