@@ -10,7 +10,7 @@
                     {{ __('quote_en') }}
                 </label>
 
-                <textarea class="border border-gray-400 p-2 w-[400px] outline-none rounded-md" name="quote_en" id="quote_en" required>{{ old('quote_en', $quote->quote_en) }}</textarea>
+                <textarea class="border border-gray-400 p-2 w-[400px] outline-none rounded-md" name="quote_en" id="quote_en">{{ old('quote_en', $quote->quote_en) }}</textarea>
 
                 @error('quote_en')
                     <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
@@ -21,7 +21,7 @@
                     {{ __('quote_ka') }}
                 </label>
 
-                <textarea class="border border-gray-400 p-2 w-[400px] outline-none rounded-md" name="quote_ka" id="quote_ka" required>{{ old('quote_ka', $quote->quote_ka) }}</textarea>
+                <textarea class="border border-gray-400 p-2 w-[400px] outline-none rounded-md" name="quote_ka" id="quote_ka">{{ old('quote_ka', $quote->quote_ka) }}</textarea>
 
                 @error('quote_ka')
                     <p class="text-red-500 text-xs mt-2">{{ $message }}</p>
