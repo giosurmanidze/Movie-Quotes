@@ -1,8 +1,8 @@
 <div class="flex text-white items-center w-full mt-3 justify-around">
     <div class="flex gap-3">
         <a href="/"
-        class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium "">
-        {{ __('Home') }}</a>
+            class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium "">
+            {{ __('Home') }}</a>
         <a href="/admin/dashboard/update-quote"
             class="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium {{ request()->is('admin/dashboard/update-quote') ? 'bg-gray-900 text-white' : '' }}">
             {{ __('EditQuote') }}</a>
@@ -22,7 +22,7 @@
         <form method="POST" action='/logout' class="text-sm font-semibold text-blue-500 ml-6">
             @csrf
             <button type="submit"
-                class="text-md hover:bg-blue-500 hover:text-white px-3 py-2 rounded-md">{{ __('Logout') }}</button>
+                class="text-md hover:bg-blue-500 hover:text-white px-3 py-2 rounded-md mt-4">{{ __('Logout') }}</button>
         </form>
     </div>
 </div>

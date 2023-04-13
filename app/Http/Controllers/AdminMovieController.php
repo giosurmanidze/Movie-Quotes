@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateMovieRequest;
+use App\Http\Requests\UpdateMovieRequest;
 use App\Models\Movie;
 use App\Models\Quote;
 use Illuminate\Http\Request;
@@ -21,7 +22,7 @@ class AdminMovieController extends Controller
         return view('components.edit-movie', ['movie' => $movie]);
     }
 
-    public function update(CreateMovieRequest $request, Movie $movie)
+    public function update(UpdateMovieRequest $request, Movie $movie)
     {
 
         $validatedData = $request->validated();

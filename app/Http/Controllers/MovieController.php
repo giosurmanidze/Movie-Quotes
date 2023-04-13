@@ -17,6 +17,6 @@ class MovieController extends Controller
             'title_en' => $data['title_en'],
         ]);
 
-        return back();
+        return redirect("/");
     }
 }
