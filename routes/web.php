@@ -8,7 +8,7 @@ use App\Http\Controllers\QuoteController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [QuoteController::class, 'index'])->name('quotes.index');
-Route::get('movies/{id}/quotes', [QuoteController::class, 'show'])->name('quotes.show');
+Route::get('movies/{movie}/quotes', [MovieController::class, 'show'])->name('quotes.show');
 Route::get('movies/{quote}/quote', [QuoteController::class, 'single'])->name('quotes.single');
 
 Route::post('logout', [SessionsController::class, 'logout'])->middleware('auth')->name('logout');
