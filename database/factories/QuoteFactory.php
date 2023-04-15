@@ -20,14 +20,12 @@ class QuoteFactory extends Factory
     {
         $faker_GE = Faker::create('ka_GE');
 
-        $randomNumber = fake()->numberBetween(1, 1000);
-        $imageUrl = "https://picsum.photos/800/600?random=" . $randomNumber;
 
         $quote = fake()->sentence(10);
 
         return [
             'movie_id' => Movie::factory(),
-            'movie_img' =>  $imageUrl,
+            'movie_img' =>  fake()->imageUrl(),
             'quote_en' => $quote,
             'quote_ka' => $faker_GE->realText(50),
         ];
