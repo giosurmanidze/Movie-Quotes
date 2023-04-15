@@ -34,7 +34,6 @@ class AdminMovieController extends Controller
 
     public function destroy(Movie $movie)
     {
-        $movie->quotes()->delete();
         $movie->delete();
 
         return back();

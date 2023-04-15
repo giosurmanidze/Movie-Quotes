@@ -8,10 +8,10 @@
                 </svg>
             </a>
 
-            @if ($quotes->count() > 0)
+            @if ($movie->count() > 0)
                 <div class="mt-10 flex flex-col">
-                    <h1 class="p-15 text-xl">{{ $quotes[0]->movie->getTranslation('title', app()->getLocale()) }}</h1>
-                    @foreach ($quotes as $quote)
+                    <h1 class="p-15 text-xl">{{ $movie->getTranslation('title', app()->getLocale()) }}</h1>
+                    @foreach ($movie->quotes as $quote)
                         <div class="mt-10 bg-white rounded-lg border border-black">
                             @if ($quote->movie_img)
                                 <x-image-check class="h-[350px] w-full object-cover rounded" :quote="$quote" />
@@ -31,6 +31,6 @@
                 <p>No quotes found for this movie.</p>
             @endif
         </div>
-        <x-lang-control id="{{ $quotes[0]->movie_id }}" path_name="quotes.show" name="id" />
+        <x-lang-control id="{{ $movie->id }}" path_name="quotes.show" name="movie" />
     </x-slot>
 </x-layout>

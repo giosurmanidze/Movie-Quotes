@@ -20,13 +20,6 @@ class QuoteController extends Controller
         ]);
     }
 
-    public function show($quote)
-    {
-        $quotes = Quote::with('movie')->where('movie_id', $quote)->inRandomOrder()->get();
-
-        return view('quotes.show', ['quotes' => $quotes]);
-    }
-
 
     public function single(Quote $quote)
     {
