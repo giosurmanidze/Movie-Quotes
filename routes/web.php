@@ -8,12 +8,12 @@ use App\Http\Controllers\QuoteController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [QuoteController::class, 'index'])->name('quotes.index');
-Route::get('movies/{id}/quotes', [QuoteController::class, 'show'])->name('quotes.show');
+Route::get('movies/{movie}/quotes', [MovieController::class, 'show'])->name('quotes.show');
 Route::get('movies/{quote}/quote', [QuoteController::class, 'single'])->name('quotes.single');
 
 Route::post('logout', [SessionsController::class, 'logout'])->middleware('auth')->name('logout');
 Route::get('admin/login', [SessionsController::class, 'create'])->middleware('guest')->name('sessions.create');
-Route::post('admin/login', [SessionsController::class, 'store'])->middleware('guest')->name('sessions.store');
+Route::post('admin/login', [SessionsController::class, 'login'])->middleware('guest')->name('sessions.store');
 
 
 Route::middleware(['admin'])->prefix('admin')->name('admin.')->group(function () {

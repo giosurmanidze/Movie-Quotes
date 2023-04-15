@@ -19,4 +19,10 @@ class MovieController extends Controller
 
         return redirect("/");
     }
+
+
+    public function show(Movie $movie)
+    {
+        return view('quotes.show', ['movie' => $movie->load('quotes')]);
+    }
 }
