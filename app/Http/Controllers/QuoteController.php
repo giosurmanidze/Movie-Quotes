@@ -45,6 +45,6 @@ class QuoteController extends Controller
 
         $quote->save();
 
-        return redirect("/");
+        return redirect("admin/dashboard/update-quote");
     }
 }
