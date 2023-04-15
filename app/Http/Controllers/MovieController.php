@@ -17,7 +17,7 @@ class MovieController extends Controller
             'title_en' => $data['title_en'],
         ]);
 
-        return redirect("/");
+        return redirect("admin/dashboard/update-movie");
     }
 
 
